@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --light-blue : rgb(103, 155, 230);
+}
+body{
+    background: var(--light-blue);
+}
+.notes-app{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.addnotes{
+    background-color: white;
+    width: 170px;
+    max-width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    color:  lightsteelblue;
+    border-radius: 10px;
+}
+.add-icon > i{
+    border: 3px dotted var(--light-blue);
+    border-radius: 60px;
+    font-size: 2rem;
+    padding: 20px;
+    cursor: pointer;
+}
+.addnotes h3{
+    font-size: 1.2rem;
+    margin-top: 9px;
+    font-weight: 700;
+}
+.notes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.notes .note{
+    background-color: white;
+    width: 250px;
+    max-width: 100%;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.notes .note h4{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    
+}
+.notes .note p{
+    font-size: .9rem;
+    margin: 10px 0px 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+.notes .note-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+}
+.notes .note-details .date{
+    font-size: 1rem;
+    font-weight: 800;
+}
+.notes .note-details .three-dots{
+    font-size: 1.6rem;
+    padding: 2px 0px 0px;
+    cursor: pointer;
+}
+.options{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 8vh;
+    width: 90px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+.options.active{
+    display: none;
+}
+.options .delete,
+.options .edit{
+    font-size: .8rem;
+    display: flex;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 10px;
+}
+.options .delete:hover,
+.options .edit:hover{
+    background: #cccc;
+}
+.options .delete{
+    font-weight:680;
+    font-size: .9rem;
+}
+.options small,
+.options small{
+    margin-left: 10px;
+}
+.notes-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)) ;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    display: none;
+    transition: all .4s ease;
+}
+.notes-container.active{
+    display: flex;
+}
+.notes-container .notes-value{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 9px;
+    position: relative;
+    transition: all .4s ease;
+}
+.notes-container .notes-value h4{
+    font-size: 1.4rem;
+    margin: 9px 0px;
+    font-weight: 900;
+}
+.notes-container .notes-value .cross{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+hr{
+    margin: 10px 0px 0px;
+}
+.notes-container .notes-value label{
+    font-weight: 900;
+    user-select: none;
+}
+.notes-container .notes-value input, textarea{
+    outline: none;
+    margin: 4px 0px 10px;
+}
+.notes-container .notes-value input {
+    padding: 5px 0px;
+}
+.notes-container .notes-value .btn{
+    background: var(--light-blue);
+    outline: none;
+    border: none;
+    padding: 8px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all .4s ease;
+}
+.notes-container .notes-value .btn:hover{
+    background-color: rgb(86, 159, 255);
+}
